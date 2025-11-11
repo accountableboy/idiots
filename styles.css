@@ -1,86 +1,121 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Accountable Boy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-</head>
+/* ===== Mid-century calm: global design system ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap');
 
-<body>
-  <header class="nav">
-    <div class="container">
-      <h1 class="logo">Accountable Boy</h1>
-      <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="what-the-fuck.html">What&nbsp;the&nbsp;Fuck</a>
-      </nav>
-    </div>
-  </header>
+:root{
+  /* Palette */
+  --bg: #f8f5f0;        /* warm ivory */
+  --paper: #ffffff;     /* card/table background */
+  --ink: #201c18;       /* near-black text */
+  --muted: #6e675f;     /* secondary text */
+  --line: #e7e2db;      /* hairline borders */
+  --accent: #c96436;    /* rust */
+  --accent-2: #2f665a;  /* deep teal */
 
-  <main class="container hero">
-    <section>
-      <h2>Holding the world accountable — playfully, truthfully, and legally.</h2>
-      <p class="mission">
-        We spotlight individuals, companies, and moments that deserve reflection.
-        It’s not about outrage — it’s about honesty with style.
-      </p>
-      <a href="what-the-fuck.html" class="btn">See Who’s on the Board →</a>
-    </section>
-  </main>
+  /* Rhythm */
+  --radius: 12px;
+  --shadow: 0 6px 24px rgba(0,0,0,.06);
+  --focus: 0 0 0 3px rgba(201,100,54,.25);
 
-  <footer class="footer">
-    <p>© <span id="year"></span> Accountable Boy. Built with courage and coffee.</p>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
-/* === TABLE STYLES === */
-.table-wrapper {
-  overflow-x: auto;
-  margin-top: 2rem;
-  box-shadow: var(--shadow);
-  border-radius: var(--radius);
-  background: white;
+  /* Type scale */
+  --s: .95rem;
+  --b: 1.05rem;
+  --h2: clamp(1.6rem, 3.5vw, 2.4rem);
+  --logo: clamp(1.4rem, 3vw, 1.8rem);
 }
 
-.accountability-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 800px;
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.6;
+  letter-spacing:.01em;
+}
+
+/* Layout */
+.container{max-width:1024px; margin:0 auto; padding:1.5rem}
+.page{padding-top:2rem; padding-bottom:4rem}
+
+/* Links & buttons */
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+.btn{
+  display:inline-block; background:var(--accent); color:#fff; text-decoration:none;
+  padding:.8rem 1.25rem; border-radius:var(--radius); box-shadow:var(--shadow);
+  transition:transform .08s ease, background .15s ease;
+}
+.btn:hover{transform:translateY(-1px); text-decoration:none}
+.btn:focus{outline:var(--focus)}
+
+/* Header / nav */
+.nav{position:sticky; top:0; z-index:50; background:var(--paper); box-shadow:var(--shadow)}
+.nav .container{display:flex; align-items:center; justify-content:space-between; gap:1rem}
+.logo{
+  margin:0; font-family: "Playfair Display", serif; font-size:var(--logo); letter-spacing:.02em;
+}
+.logo a{color:inherit; text-decoration:none}
+.nav nav{display:flex; gap:1.25rem; flex-wrap:wrap}
+.nav a{position:relative; color:var(--ink); font-weight:600; text-decoration:none}
+.nav a.active::after,
+.nav a:hover::after{
+  content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:var(--accent);
+}
+
+/* Hero */
+.hero{padding:6rem 1rem 5rem; text-align:center}
+.hero h2{font-family:"Playfair Display", serif; font-size:var(--h2); margin:.25rem 0 1rem}
+.mission{max-width:720px; margin:0 auto 2rem; font-size:var(--b); color:var(--muted)}
+
+/* Footer */
+.footer{background:var(--paper); box-shadow:var(--shadow); text-align:center; padding:1rem; color:var(--muted); font-size:var(--s)}
+
+/* ===== Tables: minimal borders, high readability ===== */
+.table-responsive{overflow:auto; background:var(--paper); border-radius:var(--radius); box-shadow:var(--shadow)}
+.accountability-table{
+  width:100%;
+  border-collapse:separate;           /* allow separated borders */
+  border-spacing:0;                   /* no gaps */
+  min-width:920px;                    /* keep columns readable */
+  background:var(--paper);
+}
+
+.accountability-table caption{
+  text-align:left; padding:1rem 1.25rem; color:var(--muted); font-size:var(--s)
+}
+
+.accountability-table thead th{
+  position:sticky; top:64px;          /* stick under the header nav */
+  background:var(--paper);
+  border-bottom:1px solid var(--line);
+  color:var(--ink); text-transform:uppercase; letter-spacing:.06em; font-size:.8rem;
+  padding:0.9rem 1rem;
+  z-index:1;
 }
 
 .accountability-table th,
-.accountability-table td {
-  padding: 1rem;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-  vertical-align: top;
+.accountability-table td{
+  padding:1rem;
+  border-bottom:1px solid var(--line);
+  vertical-align:top; text-align:left;
 }
 
-.accountability-table th {
-  background: var(--accent);
-  color: white;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 0.85rem;
+/* Column grid lines (subtle) */
+.accountability-table td+td,
+.accountability-table th+th{ border-left:1px solid var(--line) }
+
+/* Zebra and hover */
+.accountability-table tbody tr:nth-child(odd){ background:#fbf9f6 }
+.accountability-table tbody tr:hover{ background:#f4efe8 }
+
+/* Tag pills (optional for categories later) */
+.pill{
+  display:inline-block; padding:.2rem .55rem; border:1px solid var(--line);
+  border-radius:999px; font-size:.8rem; color:var(--ink); background:#fff;
 }
 
-.accountability-table tr:nth-child(even) {
-  background: #f9f6f2;
-}
-
-.accountability-table a {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.accountability-table a:hover {
-  text-decoration: underline;
-}
+/* Utilities */
+.muted{color:var(--muted)}
+.center{text-align:center}
+.nowrap{white-space:nowrap}
