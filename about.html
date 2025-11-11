@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — IDIOT BOY</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Header and navigation (same as homepage) -->
+  <header class="nav">
+    <div class="container">
+      <h1 class="logo"><a href="index.html">IDIOT BOY</a></h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="what-the-fuck.html">What&nbsp;the&nbsp;Fuck</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="container page">
+    <h2>About This Project</h2>
+
+    <p>
+      <strong>IDIOT BOY</strong> is a creative accountability project — 
+      a calm, factual space to highlight behaviour, systems, or decisions that deserve
+      public reflection. It’s not about hate or outrage; it’s about transparency, humour,
+      and a bit of self-awareness.
+    </p>
+
+    <p>
+      Each post or entry aims to raise awareness about actions or attitudes that affect 
+      people, communities, or culture — whether they’re annoying, awful, or simply overdue 
+      for accountability. Every claim links back to verifiable sources.
+    </p>
+
+    <h3>Why “IDIOT BOY”?</h3>
+    <p>
+      The name is tongue-in-cheek. It reflects how obvious bad behaviour can look in hindsight —
+      a reminder that we all have blind spots. The goal isn’t to insult, but to invite people 
+      to do better.
+    </p>
+
+    <h3>Principles</h3>
+    <ul>
+      <li>📚 Evidence-based: Nothing without sources or proof.</li>
+      <li>⚖️ Legal and fair: No defamation, no hate speech, no personal attacks.</li>
+      <li>🎭 Playful: Humour is allowed — malice isn’t.</li>
+      <li>🪞Accountability goes both ways — we call ourselves out too.</li>
+    </ul>
+
+    <p>
+      <a href="what-the-fuck.html" class="btn">Go to the Board →</a>
+    </p>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> IDIOT BOY. Built with courage and coffee.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
