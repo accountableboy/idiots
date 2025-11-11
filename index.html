@@ -1,46 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Accountability Project</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accountable Boy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <header class="wrap">
-    <h1>Accountability Project</h1>
-    <p class="tagline">Fast, clean starter on GitHub Pages.</p>
-    <nav>
-      <a href="./">Home</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <header class="nav">
+    <div class="container">
+      <h1 class="logo">Accountable Boy</h1>
+      <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="what-the-fuck.html">What&nbsp;the&nbsp;Fuck</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="wrap">
+  <main class="container hero">
     <section>
-      <h2>Welcome</h2>
-      <p>This is a minimal static starter you can deploy to GitHub Pages in minutes.</p>
-      <ul>
-        <li>100% static (HTML/CSS) — no build step required.</li>
-        <li>Pre-made GitHub Actions workflow for automatic deploys from <code>main</code>.</li>
-        <li>Custom domain ready (add a <code>CNAME</code> file when you have a domain).</li>
-      </ul>
-    </section>
-
-    <section id="about">
-      <h2>About</h2>
-      <p>Replace this content with your own sections, links, and images. Keep it simple at first — ship something, then iterate.</p>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Drop a contact email or a link to your social here.</p>
+      <h2>Holding the world accountable — playfully, truthfully, and legally.</h2>
+      <p class="mission">
+        We spotlight individuals, companies, and moments that deserve reflection.
+        It’s not about outrage — it’s about honesty with style.
+      </p>
+      <a href="what-the-fuck.html" class="btn">See Who’s on the Board →</a>
     </section>
   </main>
 
-  <footer class="wrap">
-    <small>© <span id="year"></span> Accountability Project</small>
+  <footer class="footer">
+    <p>© <span id="year"></span> Accountable Boy. Built with courage and coffee.</p>
   </footer>
 
   <script>
