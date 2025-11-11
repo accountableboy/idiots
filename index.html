@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Accountability Project</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="wrap">
+    <h1>Accountability Project</h1>
+    <p class="tagline">Fast, clean starter on GitHub Pages.</p>
+    <nav>
+      <a href="./">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>Welcome</h2>
+      <p>This is a minimal static starter you can deploy to GitHub Pages in minutes.</p>
+      <ul>
+        <li>100% static (HTML/CSS) — no build step required.</li>
+        <li>Pre-made GitHub Actions workflow for automatic deploys from <code>main</code>.</li>
+        <li>Custom domain ready (add a <code>CNAME</code> file when you have a domain).</li>
+      </ul>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>Replace this content with your own sections, links, and images. Keep it simple at first — ship something, then iterate.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Drop a contact email or a link to your social here.</p>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <small>© <span id="year"></span> Accountability Project</small>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
